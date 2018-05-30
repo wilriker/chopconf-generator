@@ -23,3 +23,6 @@ Usage of ./chopconf:
 ```
 
 Default values are based on values used in RepRapFirmware at https://github.com/dc42/RepRapFirmware.
+
+# Documentation
+See https://www.trinamic.com/fileadmin/assets/Support/Appnotes/AN001-spreadCycle.pdf and https://forum.duet3d.com/topic/5392/does-m906-set-rms-or-peak-current/19 for more details.
