@@ -7,7 +7,7 @@ Run `choconf -h` to see the available options
 ```
 Usage of ./chopconf:
   -chm
-        CHM: true|false
+        CHM: true|false (default false)
   -hdec uint
         HDEC: 16, 32, 48, 64 (default 16)
   -hend uint
@@ -15,7 +15,7 @@ Usage of ./chopconf:
   -hstrt uint
         HSTRT: 0..7 (default 3)
   -rndtf
-        RNDTF: true|false
+        RNDTF: true|false (default false)
   -tbl uint
         TBL: 16, 24, 36, 54 (default 36)
   -toff uint
