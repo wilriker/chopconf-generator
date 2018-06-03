@@ -12,6 +12,8 @@ Usage of ./chopconf:
         HDEC: 16, 32, 48, 64 (default 16)
   -hend uint
         HEND: 0..15 (default 3)
+  -hex
+        Output value in hexadecimal notation
   -hstrt uint
         HSTRT: 0..7 (default 3)
   -rndtf
