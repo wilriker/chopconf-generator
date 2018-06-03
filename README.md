@@ -2,7 +2,7 @@
 Small tool to create the bitmask required for a TMC2660 CHOPCONF register.
 
 # Usage
-Run `choconf -h` to see the available options
+Run `chopconf -h` to see the available options
 
 ```
 Usage of ./chopconf:
