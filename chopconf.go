@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+
+	"strconv"
 )
 
 func toff(n uint64) uint64 {
@@ -76,7 +78,7 @@ func tbl(n uint64) uint64 {
 
 func main() {
 	var toffVal, hstrtVal, hendVal, hdecVal, tblVal uint64
-	var rndtfVal, chmVal bool
+	var rndtfVal, chmVal, hex bool
 
 	flag.Uint64Var(&toffVal, "toff", 4, "TOFF: 0..15")
 	flag.Uint64Var(&hstrtVal, "hstrt", 3, "HSTRT: 0..7")
@@ -85,6 +87,7 @@ func main() {
 	flag.BoolVar(&rndtfVal, "rndtf", false, "RNDTF: true|false")
 	flag.BoolVar(&chmVal, "chm", false, "CHM: true|false")
 	flag.Uint64Var(&tblVal, "tbl", 36, "TBL: 16, 24, 36, 54")
+	flag.BoolVar(&hex, "hex", false, "Output value in hexadecimal notation")
 	flag.Parse()
 
 	if hendVal+hstrtVal > 15 {
@@ -93,5 +96,9 @@ func main() {
 
 	chopregister := uint32(tbl(tblVal) | chm(chmVal) | rndtf(rndtfVal) | hdec(hdecVal) | hend(hendVal) | hstrt(hstrtVal) | toff(toffVal))
 
-	fmt.Println(chopregister)
+	if hex {
+		fmt.Println("0x" + strconv.FormatUint(uint64(chopregister), 16))
+	} else {
+		fmt.Println(chopregister)
+	}
 }
