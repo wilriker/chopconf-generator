@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 
 	"strconv"
 )
@@ -91,7 +92,10 @@ func main() {
 	flag.Parse()
 
 	if hendVal+hstrtVal > 15 {
-		panic("hstrt + hend must be <= 15")
+		log.Fatal("hstrt + hend must be <= 15")
+	}
+	if toffVal == 1 && tblVal == 16 {
+		log.Fatal("TOFF=1 must not be combined with TBL=16")
 	}
 
 	chopregister := uint32(tbl(tblVal) | chm(chmVal) | rndtf(rndtfVal) | hdec(hdecVal) | hend(hendVal) | hstrt(hstrtVal) | toff(toffVal))
